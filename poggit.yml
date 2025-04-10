@@ -1,0 +1,16 @@
+name: Mentorud
+version: 1.0.0
+description: "Ez a plugin lehetővé teszi, hogy a játékosok Mentőrudat kapjanak, amely megőrzi a cuccokat halál esetén."
+authors:
+  - "rolandhrvth"
+main: Mentorud\Main
+api: [5.0.0]
+depend:
+  - PocketMine-MP
+repo: "https://github.com/rolandhrvth0/mentorud"
+tags:
+  - mentőrúd
+  - segítség
+  - plugin
+  - MesterMC
+  - MCPE
