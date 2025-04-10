@@ -1,6 +1,9 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/rolandhrvth0/mentorud
+# Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/rolandhrvth0/mentorud
 build-by-default: true
 branches:
-- main
-projects: []
-...
+  - main
+projects:
+  Mentorud:
+    path: ""
+    icon: "icon.png"
+    libs: []
