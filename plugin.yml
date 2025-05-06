@@ -1,0 +1,15 @@
+name: Mentorud
+version: 1.0.0
+main: Mentorud\Main
+api: [5.0.0]
+description: "Ez a plugin lehetővé teszi, hogy a játékosok Mentőrudat kapjanak, amely megőrzi a cuccokat halál esetén."
+author: "rolandhrvth"
+commands:
+  mentorud:
+    description: "Ad egy Mentőrudat a játékosnak, amely megőrzi a cuccait halál esetén."
+    permission: mentorud.command
+    permission-message: "Nincs jogosultságod a parancs használatához."
+permissions:
+  mentorud.command:
+    description: "Engedélyezi a Mentőrud parancs használatát."
+    default: true
