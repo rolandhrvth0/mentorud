@@ -91,13 +91,25 @@ class Main extends PluginBase implements Listener {
      * @param array $serializedItems
      * @return array
      */
-    private function deserializeItems(array $serializedItems): array {
-        $items = [];
-        foreach ($serializedItems as $slot => $data) {
-            $items[$slot] = VanillaItems::jsonDeserialize($data);
+private function deserializeItems(array $serializedItems): array {
+    $items = [];
+    foreach ($serializedItems as $slot => $data) {
+        try {
+            // JSON adat dekódolása és tárgy létrehozása
+            $itemData = json_decode($data, true);
+            $items[$slot] = ItemFactory::getInstance()->get(
+                $itemData['id'], 
+                $itemData['meta'] ?? 0, 
+                $itemData['count'] ?? 1
+            );
+        } catch (\Throwable $e) {
+            // Hiba esetén alapértelmezett érték vagy logolás
+            $this->getLogger()->error("Hiba történt a tárgy deszerializációja közben: " . $e->getMessage());
+            $items[$slot] = null; // Hiba esetén alapértelmezett érték
         }
-        return $items;
     }
+    return $items;
+}
     
     /**
      * A parancs kezelője
